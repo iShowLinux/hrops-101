@@ -8,7 +8,6 @@
   :root{
     --navy:#0B2545;
     --navy-2:#13315C;
-    --blue:#1D4E89;
     --brass:#A8873B;
     --ink:#1A1D21;
     --muted:#5A6472;
@@ -34,7 +33,6 @@
 
   .wrap{ max-width:1120px; margin:0 auto; padding:0 32px; }
 
-  /* ---------- masthead ---------- */
   .masthead{ border-bottom:1px solid var(--line); }
   .masthead__rule{ height:3px; background:var(--brass); }
   .masthead__row{
@@ -59,7 +57,6 @@
   }
   .masthead__nav a:hover{ color:var(--navy); border-bottom-color:var(--brass); }
 
-  /* ---------- hero ---------- */
   .hero{ background:var(--navy); color:#fff; }
   .hero__inner{ padding:64px 0 60px; }
   .hero__eyebrow{
@@ -69,7 +66,7 @@
   .hero__title{
     font-family:Georgia,"Times New Roman",serif;
     font-size:38px; line-height:1.22; font-weight:400;
-    margin:0 0 22px; max-width:19em; letter-spacing:.002em;
+    margin:0 0 22px; max-width:19em;
   }
   .hero__rule{ width:64px; height:2px; background:var(--brass); margin:0 0 22px; }
   .hero__lede{
@@ -85,7 +82,6 @@
   .btn--solid{ background:var(--brass); color:#fff; }
   .btn--solid:hover{ background:#96762F; }
 
-  /* ---------- sections ---------- */
   .section{ padding:56px 0; }
   .section--tint{ background:var(--tint); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 
@@ -99,11 +95,8 @@
     font-size:27px; font-weight:400; line-height:1.3;
     color:var(--navy); margin:0 0 14px;
   }
-  .section__intro{
-    font-size:15px; color:var(--muted); margin:0; max-width:56em;
-  }
+  .section__intro{ font-size:15px; color:var(--muted); margin:0; max-width:56em; }
 
-  /* ---------- practice areas ---------- */
   .areas{
     display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
     border-top:1px solid var(--line); border-left:1px solid var(--line);
@@ -116,16 +109,11 @@
   .area:hover{ background:var(--tint); }
   .area__num{
     font-family:Georgia,"Times New Roman",serif;
-    font-size:13px; color:var(--brass); letter-spacing:.08em;
-    margin:0 0 10px;
+    font-size:13px; color:var(--brass); letter-spacing:.08em; margin:0 0 10px;
   }
-  .area__name{
-    font-size:14.5px; font-weight:700; color:var(--navy);
-    margin:0 0 8px; letter-spacing:.01em;
-  }
+  .area__name{ font-size:14.5px; font-weight:700; color:var(--navy); margin:0 0 8px; }
   .area__desc{ font-size:13.5px; color:var(--muted); margin:0; line-height:1.6; }
 
-  /* ---------- credentials ---------- */
   .creds{
     display:grid; grid-template-columns:repeat(4,minmax(0,1fr));
     border-top:1px solid var(--line); border-bottom:1px solid var(--line);
@@ -138,22 +126,16 @@
   }
   .cred__label{ font-size:12px; color:var(--muted); margin:0; line-height:1.5; }
 
-  /* ---------- approach ---------- */
   .approach{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px; }
   .step{ border-top:2px solid var(--navy); padding-top:18px; }
   .step__num{
     font-family:Georgia,"Times New Roman",serif;
-    font-size:12px; letter-spacing:.14em; color:var(--brass);
-    margin:0 0 10px;
+    font-size:12px; letter-spacing:.14em; color:var(--brass); margin:0 0 10px;
   }
   .step__name{ font-size:14px; font-weight:700; color:var(--navy); margin:0 0 8px; }
   .step__desc{ font-size:13.5px; color:var(--muted); margin:0; line-height:1.6; }
 
-  /* ---------- quote ---------- */
-  .quote{
-    border-left:3px solid var(--brass);
-    padding:6px 0 6px 26px; margin:0;
-  }
+  .quote{ border-left:3px solid var(--brass); padding:6px 0 6px 26px; margin:0; }
   .quote__text{
     font-family:Georgia,"Times New Roman",serif;
     font-size:20px; line-height:1.5; font-style:italic;
@@ -161,7 +143,6 @@
   }
   .quote__by{ font-size:12px; color:var(--muted); margin:0; letter-spacing:.04em; }
 
-  /* ---------- CTA ---------- */
   .cta{ background:var(--navy); color:#fff; }
   .cta__inner{
     display:flex; align-items:center; justify-content:space-between;
@@ -173,7 +154,6 @@
   }
   .cta__sub{ font-size:13.5px; color:#C3D0DD; margin:0; max-width:40em; }
 
-  /* ---------- footer ---------- */
   .footer{ border-top:1px solid var(--line); padding:26px 0 34px; }
   .footer__row{
     display:flex; align-items:flex-start; justify-content:space-between;
@@ -192,7 +172,6 @@
     font-size:10.5px; color:#98A1AC; line-height:1.6;
   }
 
-  /* ---------- motion: subtle, corporate ---------- */
   .rv{ opacity:0; transform:translateY(10px); transition:opacity .55s ease,transform .55s ease; }
   .rv.is-in{ opacity:1; transform:none; }
   .rv[data-d="1"]{ transition-delay:.06s; }
@@ -201,7 +180,6 @@
   .rv[data-d="4"]{ transition-delay:.24s; }
   .rv[data-d="5"]{ transition-delay:.30s; }
   .rv[data-d="6"]{ transition-delay:.36s; }
-
   .draw{ transform:scaleX(0); transform-origin:left center; transition:transform .7s ease .1s; }
   .draw.is-in{ transform:scaleX(1); }
 
@@ -388,6 +366,7 @@
     for (var i = 0; i < targets.length; i++) targets[i].classList.add("is-in");
   }
 
+  /* Reveal on scroll (or immediately when motion is reduced / no IO) */
   if (!("IntersectionObserver" in window) || reduce) {
     activateAll();
   } else {
@@ -401,6 +380,31 @@
 
     for (var i = 0; i < targets.length; i++) io.observe(targets[i]);
   }
+
+  /* Auto-fit: keep the embed box exactly as tall as the content so nothing is
+     clipped and no inner scrollbar is needed. Posts its own height to the
+     parent page when embedded in an iframe. */
+  function fitHeight() {
+    try {
+      var h = Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight
+      );
+      window.__HROPS_HEIGHT__ = h;
+      if (window.self !== window.top) {
+        window.parent.postMessage({ hropsHeight: h }, "*");
+      }
+    } catch (e) { /* cross-origin parent: nothing to do */ }
+  }
+
+  fitHeight();
+
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(fitHeight).observe(document.documentElement);
+  }
+  window.addEventListener("resize", fitHeight);
+  window.addEventListener("load", fitHeight);
+  setTimeout(fitHeight, 400);
 
   window.__HROPS_READY__ = true;
 })();

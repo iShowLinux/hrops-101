@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HROPS-101 enhancements</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #fff; }
+  #frame {
+    display: block;
+    width: 100%;
+    border: 0;
+    background: #fff;
+  }
+</style>
+</head>
+<body>
+  <iframe id="frame" src="asset.html" scrolling="no" frameborder="0"></iframe>
+<script>
+(function () {
+  "use strict";
+
+  var frame = document.getElementById("frame");
+  var MIN = 600;
+  var current = 0;
+
+  function apply(h) {
+    if (!h || h < MIN) return;
+    h = Math.ceil(h);
+    if (h === current) return;
+    current = h;
+    frame.style.height = h + "px";
+  }
+
+  /* The asset reports its own content height. */
+  window.addEventListener("message", function (ev) {
+    if (!ev || !ev.data) return;
+    if (typeof ev.data.hropsHeight === "number") {
+      apply(ev.data.hropsHeight);
+    }
+  });
+
+  /* Ask the asset for its height once it has loaded. */
+  frame.addEventListener("load", function () {
+    apply(MIN);
+    try {
+      frame.contentWindow.postMessage({ hropsRequest: true }, "*");
+    } catch (e) { /* cross-origin */ }
+  });
+})();
+</script>
+</body>
+</html>
